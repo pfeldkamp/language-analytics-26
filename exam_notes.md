@@ -13,7 +13,7 @@ To ensure basic coding competence, students are required to submit code for all 
 ## The five projects 
 1. **Linguistic analysis** (descriptive analysis)
 2. **Text classificaiton**  (dataset + feature generation + model training)
-3. **Generative N-gram lanaguage model**
+3. **Generative N-gram language model**
 4. **Topic modelling**
    - instead of inference, this could be a review of a case study using topic modelling (DH paper etc)
 5. **Free-form project (self-assigned)**
