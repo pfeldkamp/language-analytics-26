@@ -9,44 +9,8 @@ from sentence_transformers import SentenceTransformer
 import umap
 from sklearn.cluster import HDBSCAN
 # %%
-terms = [
-    "conversation analysis",
-    "language policy",
-    "language ideology and attitudes",
-    "Decision making",
-    "AI",
-    "Cognitive Development",
-    "Gender",
-    "Childhood",
-    "Discourse analysis",
-    "Research in neurodiversity",
-    "Social dynamics",
-    "Decision making",
-    "sentiment analysis",
-    "cognition",
-    "psycholinguistics",
-    "Philosophy of mind",
-    "Hypnosis",
-    "Inferential Statistics",
-    "Pragmatic Analysis",
-    "Natural Language Processing",
-    "Sentiment analysis",
-    "literature",
-    "cognition",
-    "neuroscience",
-    "sentiment analysis",
-    "computational political research",
-    "semantic extraction",
-    "Psycholinguistics",
-    "Digital intimacy",
-    "Organizational culture",
-    "semiotics",
-    "philosophy of deconstruction",
-    "doublespeak",
-    "Social media research",
-    "Sock puppet auditing",
-    "NLP that supports social media research"
-]
+with open("/Users/au324704/Desktop/language-analytics-26/preparing_materials/interest_list.txt", "r") as f:
+    words = [word.lower() for word in f.readlines()]
 
 # just added these fields as visual anchors
 fields = [
@@ -56,13 +20,12 @@ fields = [
     "religion",
     "philosophy",
     "computer science",
-    #"neuroscience",
+    "history",
+    "neuroscience",
     "political science",
     "sociology",
-    "media studies",
     "nlp",
     "psychology",
-    "creative writing",
     #"critical theory",
     "computational linguistics",
     "data science"
@@ -103,7 +66,7 @@ clusterer = HDBSCAN(min_cluster_size=3, metric="euclidean")
 clusters = clusterer.fit_predict(coords)
 
 # %%
-plt.figure(figsize=(10, 8))
+plt.figure(figsize=(10, 7))
 sns.set_style("whitegrid")
 
 # scale point sizes by freq
