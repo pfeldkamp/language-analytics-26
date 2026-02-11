@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 # %%
 # PART 1
-# Print 'Hellow world'
+# Print 'Hello world'
 print("Hello world!")
 # %%
 # Define first-line regex pattern
@@ -16,11 +16,11 @@ first_line_pattern = re.compile(
     r"^[^.]*\.", re.IGNORECASE
 )  # Matches all characters until the first . (included)
 
-# Open Frankenstien
+# Open Frankenstein
 with open("../../../DATA/gb/pg84.txt") as f:
     frankenstein_text = f.read()
 
-# Extract matches using defiend regex patterns
+# Extract matches using defined regex patterns
 match = first_line_pattern.search(frankenstein_text)
 
 # If the pattern has extracted matches from the text, keep only the first match
@@ -29,10 +29,10 @@ if match:
 else:
     first_line = None  # If no match is found, set the variable to 'None'
 
-# Print the contenct of the variable
+# Print the content of the variable
 print(first_line)
 # %%
-# Loop through all files in the folder an exectute the same pattern matching x printing operation
+# Loop through all files in the folder and exectute the same pattern matching x printing operation
 for filename in glob("../../../DATA/gb/*.txt"):
     with open(filename) as f:
         raw_text = f.read()
@@ -66,7 +66,7 @@ nltk.download("punkt_tab")
 # Import word_tokenze function
 from nltk.tokenize import word_tokenize
 
-# Tokenise text into seperate words
+# Tokenise text into separate words
 tokens = word_tokenize(clean_frankenstein_text)
 # %%
 # Count work counts for each chapter
@@ -101,7 +101,7 @@ for ebook_number in range(1, 31):
         birth_year = authors_list[0].get("birth_year") if authors_list else None
         birth_years.append(birth_year)
 
-# Convert lists with data into combined dictionar
+# Convert lists with data into combined dictionary
 metadata_dict = {
     "title": titles,
     "download_counts": download_counts,
