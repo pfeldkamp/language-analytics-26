@@ -20,7 +20,7 @@ data.head()
 # %%
 # merge data with df on id
 df = pd.concat([org, data], axis=0, ignore_index=True)
-df['label'] = df['label'].apply(lambda x: 'fiction' if x == 'POS' else 'nonfiction')
+df['label'] = df['label'].apply(lambda x: 'narrative' if x == 'POS' else 'non-narrative')
 
 print(len(df))
 
@@ -72,7 +72,7 @@ plt.xlabel('Type-Token Ratio')
 plt.ylabel('Density')
 plt.legend()
 # %%
-df.loc[df['genre'] == 'SCOTUS']['text'].iloc[0]
+df.loc[df['genre'] == 'SCOTUS']['text'].iloc[2]
 # %%
 # average token length by genre
 df['token_len'] = df['tokens'].apply(lambda x: len(x))
